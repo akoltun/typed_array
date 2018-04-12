@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    typed_array (0.1.0)
+    typed_array (1.0.1)
 
 GEM
   remote: https://rubygems.org/

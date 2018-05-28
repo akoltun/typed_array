@@ -1,5 +1,7 @@
 # TypedArray
 
+[![Build Status](https://travis-ci.com/akoltun/typed_array.svg?branch=master)](https://travis-ci.com/akoltun/typed_array)
+
 This gem provides new type `TypedArray` which is direct successor of ruby `Array` class. 
 `TypedArray` requires to specify a type of its elements and allows to add only elements of this type.  
 

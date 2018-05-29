@@ -8,7 +8,7 @@ RSpec.describe TypedArray do
   end
 
   it 'requires a type to create an array' do
-    expect { TypedArray.new }.to raise_error ArgumentError, 'wrong number of arguments (0 for 1+)'
+    expect { TypedArray.new }.to raise_error ArgumentError, "wrong number of arguments (#{Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.3') ? 'given 0, expected 1+' : '0 for 1+'})"
   end
 
   [1, 'abc', :abc, 1.1, { a: 1 }, [1, 'a', :b], Time.now, TestTypedArrayItem.new].each do |item|

@@ -1,5 +1,6 @@
 # TypedArray
 
+[![Gem Version](https://badge.fury.io/rb/typed_array.svg)](https://badge.fury.io/rb/typed_array)
 [![Build Status](https://travis-ci.com/akoltun/typed_array.svg?branch=master)](https://travis-ci.com/akoltun/typed_array)
 
 This gem provides new type `TypedArray` which is direct successor of ruby `Array` class. 

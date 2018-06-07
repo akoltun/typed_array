@@ -15,8 +15,26 @@ RSpec.describe TypedArray do
     context "Array of #{item.class.name}" do
       let(:typed_array) { TypedArray[item] }
 
-      it "creates array of type #{item.class.name}" do
-        expect(TypedArray.new(item.class).item_class).to eq item.class
+      context '#new' do
+        it "creates array of type #{item.class.name}" do
+          expect(TypedArray.new(item.class).item_class).to eq item.class
+        end
+
+        it 'with all items of the same type creates TypedArray' do
+          expect(TypedArray.new(item.class, [item, item]).item_class).to eq item.class
+        end
+
+        it 'with items of different type raises error' do
+          expect { TypedArray.new(item.class, [item, TestTypedArrayWrongItem.new]) }.to raise_error ArgumentError, "assigned item(s) should be of the type #{item.class}"
+        end
+
+        it 'allows nil items' do
+          expect(TypedArray.new(item.class, [nil, item]).item_class).to eq item.class
+        end
+
+        it 'allows all items to be nil' do
+          expect(TypedArray.new(item.class, [nil, nil]).item_class).to eq item.class
+        end
       end
 
       context '#[]' do

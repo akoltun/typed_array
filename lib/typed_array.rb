@@ -12,6 +12,7 @@ class TypedArray < Array
 
   def initialize(item_class, *args)
     @item_class = item_class
+    validate_assigned_items(*args) if args.size > 0
     super(*args)
   end
 
